@@ -1,10 +1,14 @@
 <template>
 <div class="main">
-  <div class="titulo">
-    Monitoreo de Camaras de la Municipalidad de Las Condes /by WIT
+  <div class="container">
+  <div class="itemlogo">
+      <div class="logocontainer">
+          <img src="./assets/logo.png" alt="Logo de Las Condes">
+          <h3>MONITOREO DE CÁMARAS</h3>
+          <button @click="reloadPage">Refrescar</button>
+      </div>
   </div>
-  <hr>
-  <div class="camaras" v-for="(item,index) in urls" :key="index">
+  <div class="item" v-for="(item,index) in urls" :key="index">
    
     <HLSVideoPlayer
     :front=item.front
@@ -12,7 +16,8 @@
     :inside=item.inside
     />
   
-     </div>
+    </div>
+  </div>
 </div>
 
 </template>
@@ -48,14 +53,84 @@ export default {
       }
     },
 
+  reloadPage() {
+    location.reload();
+  }
+
   }
   
 };
 </script>
 
 <style scoped>
-.main{
+.container {
+  display: flex;
+  justify-content:space-evenly;
+  margin: 8px;
+  flex-wrap: wrap;
+  margin: auto;
+}
+
+.item {
+    box-sizing: border-box;
+    text-align: center;
+    align-content: center;
+    margin-top: 30px;
+    margin-bottom: 5px;
+    padding: 4px;
+    flex-basis: 18%;
+    background-color: rgb(33, 74, 113);
+    box-sizing: border-box;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.itemlogo {
+  box-sizing: border-box;
   text-align: center;
+  align-content: center;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding: 4px;
+  flex-basis: 18%;
+}
+
+.logocontainer {
+    position: relative;
+    top: 20%;
+}
+
+.logocontainer h3 {
+    display: block;
+    color: white;
+    font-family: "Orbitron", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1.8rem;
+    text-transform: capitalize;
+}
+
+.logocontainer img {
+    display: block;
+    max-width: 100%;
+    margin: auto;
+}
+
+button {
+  font-size: 1.6rem;
+  font-weight: bold;
+  background-color: rgb(72, 140, 204);
+  color: white;
+  padding: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  border: 2px solid black;
+  border-radius: 10px;
+}
+
+button:hover {
+  background-color: rgb(37, 90, 139);
 }
 
 .camaras {
@@ -65,11 +140,6 @@ display:inline-block;
     width: 25%;
     padding: 5px;
     margin: 2px;
-}
-.titulo{
-  font-size: xx-large;
-  text-align: center;
-  margin-top: 20px;
 }
 </style>
 

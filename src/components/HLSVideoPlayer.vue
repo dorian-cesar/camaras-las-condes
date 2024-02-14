@@ -1,8 +1,8 @@
 <template>
     <div class="bus">
-        <p>{{ patente }}</p>
-        <video ref="videoPlayer" class="video-js vjs-default-skin" controls width="400" ></video>
-        <video ref="videoPlayer2" class="video-js vjs-default-skin" controls width="400" ></video>
+        <h4>{{ patente }}</h4>
+        <video ref="videoPlayer" class="video-js vjs-default-skin" controls width="345"></video>
+        <video ref="videoPlayer2" class="video-js vjs-default-skin" controls width="345"></video>
     </div>
   </template>
   
@@ -68,6 +68,14 @@
   
   <style>
   /* Estilos opcionales para el componente de video */
-
+  .item h4 {
+    display: block;
+    margin: 0;
+    color: white;
+  }
+  .item video {
+    display: block;
+    box-sizing: border-box;
+  }
   </style>
-  
+    
