@@ -12,15 +12,15 @@
     </div>
   </div>
   <div class="container">
-    <div class="item" v-for="(item,index) in urls" :key="index">
-   
-    <HLSVideoPlayer
-    :front=item.front
-    :patente="item.patente"
-    :inside=item.inside
-    />
-  
-    </div>
+    <template v-for="(item,index) in urls" :key="index">
+      <template v-if="item.estado === 'active'">
+      <HLSVideoPlayer
+      :front=item.front
+      :patente="item.patente"
+      :inside=item.inside
+      />
+      </template>
+    </template>
   </div>
 </div>
 
@@ -92,7 +92,7 @@ export default {
 .container {
   display: flex;
   flex: 1 1;
-  justify-content: space-between;
+  justify-content: space-evenly;
   margin: 8px;
   flex-wrap: wrap;
   margin: auto;
@@ -100,20 +100,6 @@ export default {
   vertical-align: top;
   margin-right: 20px;
   align-items: flex-start;
-}
-
-.item {
-    box-sizing: border-box;
-    text-align: center;
-    align-content: center;
-    margin-top: 30px;
-    margin-bottom: 5px;
-    padding: 4px;
-    flex-basis: 18%;
-    background-color: #240A3B;
-    box-sizing: border-box;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
 }
 
 .itemlogo {

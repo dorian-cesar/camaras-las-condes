@@ -1,8 +1,10 @@
 <template>
-  <div class="bus">
-    <h4>{{ patente }}</h4>
-    <video ref="videoPlayer" class="video-js vjs-default-skin" controls width="345"></video>
-    <video ref="videoPlayer2" class="video-js vjs-default-skin" controls width="345"></video>
+  <div class="item">
+    <div class="bus">
+      <h4>{{ patente }}</h4>
+      <video ref="videoPlayer" class="video-js vjs-default-skin" controls width="345"></video>
+      <video ref="videoPlayer2" class="video-js vjs-default-skin" controls width="345"></video>
+    </div>
   </div>
 </template>
 
@@ -90,5 +92,19 @@ export default {
 .bus video {
   display: block;
   box-sizing: border-box;
+}
+
+.item {
+    box-sizing: border-box;
+    text-align: center;
+    align-content: center;
+    margin-top: 30px;
+    margin-bottom: 5px;
+    padding: 4px;
+    flex-basis: 18%;
+    background-color: #240A3B;
+    box-sizing: border-box;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
 </style>
